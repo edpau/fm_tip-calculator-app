@@ -17,8 +17,6 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -31,20 +29,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+<img src="./images/screenshot.png" alt="Screenshot" width="300"/>
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://github.com/edpau/fm_tip-calculator-app)
+- [Live Site URL](https://edpau.github.io/fm_tip-calculator-app/)
 
 ## My process
 
@@ -95,8 +85,10 @@ const data = Object.fromEntries(formData);
 ```
 
 #### Radio Button label, checked color
+
 - When changing checked color of the label, need to select checked on the radio button
-``` css
+
+```css
 input[type="radio"]:checked + label {
   background-color: var(--color-button-tip-selected);
   color: var(--color-button-tip-text-selected);
@@ -104,35 +96,49 @@ input[type="radio"]:checked + label {
 ```
 
 #### How to make custom radio input custom %
-- I put a input inside the radio button label, and put it to disabled and use CSS to set `pointer-events: none`.
-So user can select the custom radio label just as the other.
+
+- I put a input below the radio button label in the sane div, and put it to disabled and use CSS to set `pointer-events: none`.
+  So user can select the custom radio label just as the other.
 
 ```html
-  <label class="select-tip__radio-label select-tip__radio-label--custom" for="tip-percentage-custom">
-              <input
-                type="number"
-                class="select-tip__radio-custom-input"
-                name="tip-percentage-custom-input"
-                name="other_tip"
-                placeholder="Custom"
-                min="0"
-                disabled
-            /></label>
+<div class="select-tip__custom-container">
+  <input
+    class="select-tip__radio select-tip__radio--custom"
+    type="radio"
+    id="tip-percentage-custom"
+    name="tip-percentage"
+    value="0"
+  />
+  <label
+    class="select-tip__radio-label select-tip__radio-label--custom"
+    for="tip-percentage-custom"
+  >
+  </label>
+  <input
+    type="number"
+    class="select-tip__radio-custom-input"
+    name="tip-percentage-custom-input"
+    placeholder="Custom"
+    min="0"
+    autocomplete="off"
+    disabled
+  />
+</div>
 ```
-- When the user selected the custom radio label I use JS to set the input `disabled = false`, set `pointer-events: auto` and focus on the input. 
 
-``` js
- if (target.id === "tip-percentage-custom") {
-    customInput.disabled = false;
-    customInput.style.pointerEvents = "auto";
-    customInput.focus();
-  } else {
-    customInput.disabled = true;
-    customInput.style.pointerEvents = "none";
-    customInput.value = "";
-  }
+- When the user selected the custom radio label I use JS to set the input `disabled = false`, set `pointer-events: auto` and focus on the input.
+
+```js
+if (target.id === "tip-percentage-custom") {
+  customInput.disabled = false;
+  customInput.style.pointerEvents = "auto";
+  customInput.focus();
+} else {
+  customInput.disabled = true;
+  customInput.style.pointerEvents = "none";
+  customInput.value = "";
+}
 ```
-
 
 #### TS
 
@@ -155,22 +161,20 @@ So user can select the custom radio label just as the other.
 - [JavaScript round a number to 2 decimal places ](https://codedamn.com/news/javascript/javascript-round-a-number-to-2-decimal-places-with-examples)
 - using the Math.round() function, problem it will not leave 2 decimal place.
 
-``` js
-
+```js
 var a = 5.678948;
 let b = 10.257683;
 let c = 6.6456583;
-let result1 = Math.round(a*100)/100;
-let result2 = Math.round(b*10)/10;
-let result3 = Math.round(x*1000)/1000;
-console.log(result1) // 5.68
-console.log(result2) // 10.3
-console.log(typeof result2) // 6.646
-
+let result1 = Math.round(a * 100) / 100;
+let result2 = Math.round(b * 10) / 10;
+let result3 = Math.round(x * 1000) / 1000;
+console.log(result1); // 5.68
+console.log(result2); // 10.3
+console.log(typeof result2); // 6.646
 ```
 
-
 ### Reminder
+
 - use `aria-live="polite"` for displaying error
 
 ### Continued development
@@ -180,12 +184,15 @@ console.log(typeof result2) // 6.646
 ### Useful resources
 
 #### From
+
 - [How to structure a web form](https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_structure_a_web_form) - Learn how to use <fieldset> with radio input. Learn how to use <section>, <fieldset> for radio button to build a simple payment form with good html semantic elements.
 - [How to stop form submission using JavaScript?](https://www.tutorialspoint.com/how-to-stop-form-submission-using-javascript)
 - [Client-side form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
 
 #### Styling Radio Buttons
+
 -[how to create a custom Input radio button which have attributes inside it](https://stackoverflow.com/questions/72746367/how-to-create-a-custom-input-radio-button-which-have-attributes-inside-it) - show me basic, how to style an input
+
 - [CodePen Home Radio button without the dot](https://codepen.io/jacobberglund/pen/mdPEza) - a simple example
 - [Pure CSS - SVG Radio Selector Buttons](https://codepen.io/nikkipantony/pen/wpPGZp) - advance example
 - [Styling Radio Buttons with CSS (59 Custom Examples)](https://www.sliderrevolution.com/resources/styling-radio-buttons/) - 59 different examples
@@ -194,24 +201,18 @@ console.log(typeof result2) // 6.646
 - [HTML Forms: Radio buttons with text fields](https://stackoverflow.com/questions/12888612/html-forms-radio-buttons-with-text-fields) - How to add custom tips in radio button
 
 #### Style input
+
 - [How TO - Hide Arrows From Input Number](https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp)
 
 #### JS
+
 [HTML DOM Events](https://www.w3schools.com/jsref/dom_obj_event.asp)
 
 #### Design system
+
 - [Design your service using GOV.UK styles, components and patterns](https://design-system.service.gov.uk) - Use this design system to make government services consistent with GOV.UK. Learn from the research and experience of other service teams and avoid repeating work that’s already been done.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Edward Pau](https://www.edpau.me)
+- Frontend Mentor - [@edpau](https://www.frontendmentor.io/profile/edpau)
