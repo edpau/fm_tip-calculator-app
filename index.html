@@ -44,6 +44,7 @@
         novalidate
       >
         <section class="calculator">
+          <h2 class="sr-only">Calculator</h2>
           <label for="billAmount" class="calculator__input-label"
             ><span>Bill</span
             ><span aria-live="polite" class="calculator__bill-error hidden"
@@ -124,12 +125,14 @@
               name="tip-percentage"
               value="0"
             />
-            <label class="select-tip__radio-label select-tip__radio-label--custom" for="tip-percentage-custom">
+            <label
+              class="select-tip__radio-label select-tip__radio-label--custom"
+              for="tip-percentage-custom"
+            >
               <input
                 type="number"
                 class="select-tip__radio-custom-input"
                 name="tip-percentage-custom-input"
-                name="other_tip"
                 placeholder="Custom"
                 min="0"
                 disabled
@@ -137,9 +140,10 @@
           </fieldset>
           <label class="calculator__input-label" for="numberOfPeople"
             ><span>Number of People</span
-            ><span class="calculator__people-error hidden" aria-live="polite">Error Message</span></label
+            ><span class="calculator__people-error hidden" aria-live="polite"
+              >Error Message</span
+            ></label
           >
-
           <input
             class="calculator__number-input calculator__number-input--people"
             id="numberOfPeople"
@@ -151,6 +155,7 @@
           />
         </section>
         <section class="result">
+          <h2 class="sr-only">Tip Result</h2>
           <p
             class="result__label"
             id="tipAmountLabel"
