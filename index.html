@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img
+        class="header__img"
+        src="./images/logo.svg"
+        alt="Splitter Logo"
+        width="86.66"
+        height="53.14"
+      />
+    </header>
+
+    <main class="main-content">
+      <form
+        class="tip-calculator"
+        action="#"
+        onsubmit="return false"
+        novalidate
+      >
+        <section class="calculator">
+          <label for="billAmount" class="calculator__input-label"
+            ><span>Bill</span
+            ><span aria-live="polite" class="calculator__bill-error hidden"
+              >Error Message</span
+            ></label
+          >
+          <input
+            class="calculator__number-input calculator__number-input--bill"
+            type="number"
+            id="billAmount"
+            name="billAmount"
+            min="0"
+            placeholder="0"
+            step="0.01"
+            required
+          />
+          <fieldset class="select-tip">
+            <legend class="select-tip__legend">
+              <span>Select Tip %</span
+              ><span class="select-tip__error hidden">Error Message</span>
+            </legend>
+
+            <input
+              class="select-tip__radio"
+              type="radio"
+              id="tip-percentage-5"
+              name="tip-percentage"
+              value="5"
+              required
+            />
+            <label class="select-tip__radio-label" for="tip-percentage-5"
+              >5%</label
+            >
+            <input
+              class="select-tip__radio"
+              type="radio"
+              id="tip-percentage-10"
+              name="tip-percentage"
+              value="10"
+            />
+            <label class="select-tip__radio-label" for="tip-percentage-10"
+              >10%</label
+            >
+            <input
+              class="select-tip__radio"
+              type="radio"
+              id="tip-percentage-15"
+              name="tip-percentage"
+              value="15"
+            />
+            <label class="select-tip__radio-label" for="tip-percentage-15"
+              >15%</label
+            >
+            <input
+              class="select-tip__radio"
+              type="radio"
+              id="tip-percentage-25"
+              name="tip-percentage"
+              value="25"
+            />
+            <label class="select-tip__radio-label" for="tip-percentage-25"
+              >25%</label
+            >
+            <input
+              class="select-tip__radio"
+              type="radio"
+              id="tip-percentage-50"
+              name="tip-percentage"
+              value="50"
+            />
+            <label class="select-tip__radio-label" for="tip-percentage-50"
+              >50%</label
+            >
+            <input
+              class="select-tip__radio select-tip__radio--custom"
+              type="radio"
+              id="tip-percentage-custom"
+              name="tip-percentage"
+              value="0"
+            />
+            <label class="select-tip__radio-label select-tip__radio-label--custom" for="tip-percentage-custom">
+              <input
+                type="number"
+                class="select-tip__radio-custom-input"
+                name="tip-percentage-custom-input"
+                name="other_tip"
+                placeholder="Custom"
+                min="0"
+                disabled
+            /></label>
+          </fieldset>
+          <label class="calculator__input-label" for="numberOfPeople"
+            ><span>Number of People</span
+            ><span class="calculator__people-error hidden" aria-live="polite">Error Message</span></label
+          >
+
+          <input
+            class="calculator__number-input calculator__number-input--people"
+            id="numberOfPeople"
+            name="number-people"
+            type="number"
+            min="1"
+            placeholder="0"
+            required
+          />
+        </section>
+        <section class="result">
+          <p
+            class="result__label"
+            id="tipAmountLabel"
+            aria-label="Tip Amount per person"
+          >
+            Tip Amount<br /><span class="result__label-unit">/ person</span>
+          </p>
+          <output
+            class="result__value result__value--tip"
+            aria-labelledby="tipAmountLabel"
+            name="tip-per-person"
+            >$0.00</output
+          >
+          <p class="result__label" id="totalLabel">
+            Total<br /><span class="result__label-unit">/ person</span>
+          </p>
+          <output
+            class="result__value result__value--total"
+            aria-labelledby="totalLabel"
+            name="total-per-person"
+            >$0.00</output
+          >
+          <button class="result__reset-button" disabled>RESET</button>
+        </section>
+      </form>
+    </main>
+    <script src="./dist/index.js"></script>
+  </body>
+</html>
