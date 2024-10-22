@@ -118,25 +118,29 @@
             <label class="select-tip__radio-label" for="tip-percentage-50"
               >50%</label
             >
-            <input
-              class="select-tip__radio select-tip__radio--custom"
-              type="radio"
-              id="tip-percentage-custom"
-              name="tip-percentage"
-              value="0"
-            />
-            <label
-              class="select-tip__radio-label select-tip__radio-label--custom"
-              for="tip-percentage-custom"
-            >
+            <div class="select-tip__custom-container">
               <input
-                type="number"
-                class="select-tip__radio-custom-input"
-                name="tip-percentage-custom-input"
-                placeholder="Custom"
-                min="0"
-                disabled
-            /></label>
+                class="select-tip__radio select-tip__radio--custom"
+                type="radio"
+                id="tip-percentage-custom"
+                name="tip-percentage"
+                value="0"
+              />
+              <label
+                class="select-tip__radio-label select-tip__radio-label--custom"
+                for="tip-percentage-custom"
+              >
+               </label>
+               <input
+               type="number"
+               class="select-tip__radio-custom-input"
+               name="tip-percentage-custom-input"
+               placeholder="Custom"
+               min="0"
+               autocomplete="off"
+               disabled
+           />
+            </div>
           </fieldset>
           <label class="calculator__input-label" for="numberOfPeople"
             ><span>Number of People</span
