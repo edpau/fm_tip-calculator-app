@@ -327,6 +327,7 @@ position: relative;
     border-radius: 25px;
     position: relative;
     align-items: start;
+    box-shadow: 0px 32px 43px rgba(79.28, 166.39, 174.82, 0.20);
   }
 
   .calculator {
@@ -351,7 +352,7 @@ position: relative;
 
     top:0px;
     left:0px;
-    padding: 5px 10px;
+    padding: 5px 13px 0px 0px;
   }
 
   .calculator__input-label:first-of-type {
