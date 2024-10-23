@@ -30,8 +30,8 @@
         class="header__img"
         src="./images/logo.svg"
         alt="Splitter Logo"
-        width="86.66"
-        height="53.14"
+        width="87"
+        height="53"
       />
     </header>
 
@@ -44,7 +44,8 @@
         novalidate
       >
         <section class="calculator">
-          <label for="billAmount" class="calculator__input-label"
+          <h2 class="sr-only">Calculator</h2>
+          <label for="billAmount" class="calculator__input-label calculator__input-label--bill"
             ><span>Bill</span
             ><span aria-live="polite" class="calculator__bill-error hidden"
               >Error Message</span
@@ -117,29 +118,36 @@
             <label class="select-tip__radio-label" for="tip-percentage-50"
               >50%</label
             >
-            <input
-              class="select-tip__radio select-tip__radio--custom"
-              type="radio"
-              id="tip-percentage-custom"
-              name="tip-percentage"
-              value="0"
-            />
-            <label class="select-tip__radio-label select-tip__radio-label--custom" for="tip-percentage-custom">
+            <div class="select-tip__custom-container">
               <input
-                type="number"
-                class="select-tip__radio-custom-input"
-                name="tip-percentage-custom-input"
-                name="other_tip"
-                placeholder="Custom"
-                min="0"
-                disabled
-            /></label>
+                class="select-tip__radio select-tip__radio--custom"
+                type="radio"
+                id="tip-percentage-custom"
+                name="tip-percentage"
+                value="0"
+              />
+              <label
+                class="select-tip__radio-label select-tip__radio-label--custom"
+                for="tip-percentage-custom"
+              >
+               </label>
+               <input
+               type="number"
+               class="select-tip__radio-custom-input"
+               name="tip-percentage-custom-input"
+               placeholder="Custom"
+               min="0"
+               autocomplete="off"
+               disabled
+           />
+            </div>
           </fieldset>
-          <label class="calculator__input-label" for="numberOfPeople"
+          <label class="calculator__input-label calculator__input-label--people" for="numberOfPeople"
             ><span>Number of People</span
-            ><span class="calculator__people-error hidden" aria-live="polite">Error Message</span></label
+            ><span class="calculator__people-error hidden" aria-live="polite"
+              >Error Message</span
+            ></label
           >
-
           <input
             class="calculator__number-input calculator__number-input--people"
             id="numberOfPeople"
@@ -151,10 +159,10 @@
           />
         </section>
         <section class="result">
+          <h2 class="sr-only">Tip Result</h2>
           <p
             class="result__label"
             id="tipAmountLabel"
-            aria-label="Tip Amount per person"
           >
             Tip Amount<br /><span class="result__label-unit">/ person</span>
           </p>
