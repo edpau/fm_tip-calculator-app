@@ -184,6 +184,7 @@ body {
 
 .select-tip__radio-label--custom {
   background-color: var(--color-button-tip-custom);
+  color: var(--color-button-tip-custom);
   width: 100%;
   height: 100%;
   position: absolute;
