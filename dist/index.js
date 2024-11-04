@@ -1,8 +1,7 @@
 "use strict";
-let bill = null;
-let tipPercent = null;
-let numberOfPeople = null;
-let data = null;
+let bill;
+let tipPercent;
+let numberOfPeople;
 const form = document.querySelector(".tip-calculator");
 const billElement = document.querySelector(".calculator__number-input--bill");
 const tipAmount = document.querySelector(".result__value--tip");
