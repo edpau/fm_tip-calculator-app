@@ -1,7 +1,6 @@
-let bill = null;
-let tipPercent = null;
-let numberOfPeople = null;
-let data = null;
+let bill: number | undefined;
+let tipPercent: number | undefined;
+let numberOfPeople: number | undefined;
 
 const form = document.querySelector(".tip-calculator") as HTMLFormElement;
 
